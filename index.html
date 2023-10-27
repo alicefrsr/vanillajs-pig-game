@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Shadows+Into+Light&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>Pig game</title>
+  </head>
+  <body>
+    <header>
+      <div class="title">
+        <img class="logo" src="./dice-logo.png" alt="" />
+        <h1>Pig game</h1>
+      </div>
+      <button class="btn modal-btn">How to play</button>
+      <div class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="instructions">
+        <div class="modal-content">
+          <button class="close-btn" aria-label="Close instructions window" autofocus>&times;</button>
+          <img class="pig-head" src="./pig-head.png" alt="" />
+          <h1 class="modal-title" id="instructions">How the game works</h1>
+          <p>The game of Pig is a very simple dice game in which two players race to reach 100 points.</p>
+          <p>
+            Each turn, a player rolls a die: as long as the value is higher than 1, the value gets added to the previous roll(s), giving each player a current
+            score. Players can keep rolling the die as many times as they want, but if they roll a 1 their current score resets to 0 and they lose their turn.
+          </p>
+          <p>At any time, players can hold their current score, which gets added to their total score, and must give away their turn to their opponent.</p>
+          <p>First player to reach a total score of 100 wins!</p>
+          <p>Good luck!</p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="player player--0 player--active">
+        <h2 class="name" id="name--0">Player 1</h2>
+
+        <div class="current">
+          <p class="current-label" aria-hidden="true">Current score</p>
+          <p class="current-score" id="current--0" aria-label="Player 1 current score">0</p>
+        </div>
+        <p class="total-label" aria-hidden="true">Total score</p>
+        <p class="score" id="score--0" aria-label="Player 1 total score">43</p>
+
+        <div class="winner" id="winner--0"></div>
+      </section>
+
+      <section class="btns-dice-container">
+        <div class="btns-container">
+          <button class="btn-game btn--roll"><span aria-hidden="'true"> </span>Roll dice !</button>
+        </div>
+        <div class="dice" aria-live="polite" aria-atomic="true">
+          <img class="dice-img" src="dice-5.png" alt="Playing dice" />
+        </div>
+        <div class="game-over" aria-live="polite">
+          <img class="pig-body" src="./pig-body.png" alt="" />
+          <p>Game Over !</p>
+        </div>
+
+        <button class="btn-game btn--hold">Hold</button>
+        <button class="btn-game btn--new">
+          <span aria-hidden="'true"><i class="fa-solid fa-repeat"></i></span>
+          New game
+        </button>
+      </section>
+      <section class="player player--1">
+        <h2 class="name" id="name--0">Player 2</h2>
+
+        <div class="current">
+          <p class="current-label" aria-hidden="true">Current score</p>
+          <p class="current-score" id="current--1" aria-label="Player 2 current score">0</p>
+        </div>
+        <p class="total-label" aria-hidden="true">Total score</p>
+        <p class="score" id="score--1" aria-label="Player 2 total score">43</p>
+
+        <div class="winner" id="winner--1">
+          <p></p>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
